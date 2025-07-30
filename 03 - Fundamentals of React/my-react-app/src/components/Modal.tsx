@@ -17,7 +17,7 @@ const Modal: React.FC<ModalProps> = ({isOpen, onClose, rating}) => {
                 <p>
                     You rated us {rating} star{rating > 1 ? 's' : ''}
                 </p>
-                <Button className="close-btn" onClick={onClose}>
+                <Button className="close-btn" onClick={onClose}>asd
                     Close
                 </Button>
             </div>
