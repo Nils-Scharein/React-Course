@@ -1,4 +1,4 @@
-import type {NoteFormData, Note} from "../types.ts";
+import type {NoteFormData, NoteType} from "../types.ts";
 
 
 import {useState} from "react";
@@ -7,8 +7,8 @@ import TextInput from "./components/TextInput.tsx";
 import SelectField from "./components/SelectField.tsx";
 
 interface NoteFormProps {
-    notes: Note[],
-    setNotes: (notes: Note[]) => void
+    notes: NoteType[],
+    setNotes: (notes: NoteType[]) => void
 }
 
 export const NoteForm = ({notes, setNotes}: NoteFormProps) => {
@@ -22,7 +22,7 @@ export const NoteForm = ({notes, setNotes}: NoteFormProps) => {
 
     const [isFormVisible, setIsFormVisible] = useState<boolean>(false);
 
-    const handleChange = (e: { target: { name: any; value: any; }; }) => {
+    const handleChange = (e: { target: { name: string; value: string; }; }) => {
         console.log(e.target.name, e.target.value);
         setFormData({
             ...formData,

@@ -19,7 +19,7 @@ export type NoteFormData = {
  * Full note type including a unique ID.
  * Combines NoteFormData with an `id` field.
  */
-export type Note = NoteFormData & {
+export type NoteType = NoteFormData & {
     /** Unique identifier for the note */
     id: number;
 };
