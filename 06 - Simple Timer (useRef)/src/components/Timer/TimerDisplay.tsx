@@ -3,16 +3,11 @@ import TimeClass from "./TimeClass.tsx";
 
 type TimerDisplayProps = {
     isRunning: boolean;
-    timeParts: {
-        hours: number;
-        minutes: number;
-        seconds: number;
-        milliseconds: number;
-    };
+    time: number;
 }
 
 
-const TimerDisplay = ({isRunning, time} : TimerDisplayProps) => {
+const TimerDisplay = ({isRunning, time}: TimerDisplayProps) => {
     const timeFormatted = new TimeClass(time);
     const timeParts = timeFormatted.toObject();
     return (
@@ -27,7 +22,7 @@ const TimerDisplay = ({isRunning, time} : TimerDisplayProps) => {
                 <div key={label} className="flex items-center">
                     <TimerDigit
                         className="text-4xl font-mono text-center px-1"
-                        numberTime={value}
+                        numberTime={Number(value)}
                     />
                     {idx < arr.length - 1 && (
                         <span className="text-4xl font-mono mx-1">:</span>
