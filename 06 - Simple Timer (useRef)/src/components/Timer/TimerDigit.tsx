@@ -4,7 +4,7 @@ type TimerNumberProps = {
     label?: string;
 };
 
-const TimerNumber = ({numberTime, className, label}: TimerNumberProps) => {
+const TimerDigit = ({numberTime, className, label}: TimerNumberProps) => {
     return (
         <div className={`${className}`}>
             <div className={className}>
@@ -15,4 +15,4 @@ const TimerNumber = ({numberTime, className, label}: TimerNumberProps) => {
     );
 };
 
-export default TimerNumber
+export default TimerDigit

@@ -1,4 +1,4 @@
-class TimeHelper {
+class TimeClass {
     private totalSeconds: number;
 
     constructor(seconds: number) {
@@ -34,4 +34,4 @@ class TimeHelper {
     }
 }
 
-export default TimeHelper
+export default TimeClass

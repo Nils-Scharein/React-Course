@@ -1,4 +1,4 @@
-import SimpleTimer from "./components/SimpleTimer.tsx";
+import SimpleTimer from "./components/Timer/SimpleTimer.tsx";
 
 function App() {
     return (
