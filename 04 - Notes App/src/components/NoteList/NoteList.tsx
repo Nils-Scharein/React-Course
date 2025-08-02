@@ -19,7 +19,7 @@ const NoteList = ({notes, deleteNote}: NoteListProps): JSX.Element => {
         <div className="space-y-4">
             {notes.map((note: NoteType) => {
                 return (
-                    <div key={note.id} className="space-y-4">
+                    <div key={note.id} className="space-y-4" id="NoteList">
                         <Note key={note.id} note={note} deleteNote={deleteNote}/>
                     </div>
                 );
