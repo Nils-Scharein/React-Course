@@ -1,0 +1,31 @@
+#coingecko-logo {
+    width: 30px;
+    height: 30px;
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* optional: vertikal zentrieren */
+    padding: 10px;
+}
+
+#attribution {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+
+.attribution a {
+    text-decoration: none;
+    color: #4caf50; /* CoinGecko-Grün optional */
+    font-weight: bold;
+}
+
+.HeaderLinks {
+    display: flex;
+    gap: 16px;
+}
