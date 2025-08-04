@@ -1,16 +1,39 @@
 import CryptoCard from "./CryptoCard.tsx";
+import type {Coin} from "../types.ts";
+import {AnimatePresence, motion} from "framer-motion";
 
-export const Dashboard = () => {
+type DashboardProps = {
+    coins: Coin[];
+};
 
-    const testArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-
+export const Dashboard = ({coins}: DashboardProps) => {
     return (
-        <>
-            <div className="grid">
-                {testArray.map((element, index) => (
-                    <CryptoCard key={element} coinLabel={String(element)}/>
-                ))}
-            </div>
-        </>
+        <div className="grid">
+            {coins.length > 0 ? (
+                <AnimatePresence>
+                    {coins.map((singleCoin) => (
+                        <motion.div
+                            key={singleCoin.id}
+                            layout
+                            initial={{opacity: 0, scale: 0.95}}
+                            animate={{opacity: 1, scale: 1}}
+                            exit={{opacity: 0, scale: 0.9}}
+                            transition={{duration: 0.3}}
+                        >
+                            <CryptoCard coin={singleCoin}/>
+                        </motion.div>
+                    ))}
+                </AnimatePresence>
+            ) : (
+                <motion.p
+                    key="no-results"
+                    initial={{opacity: 0}}
+                    animate={{opacity: 1}}
+                    exit={{opacity: 0}}
+                >
+                    No matching coins
+                </motion.p>
+            )}
+        </div>
     );
 };

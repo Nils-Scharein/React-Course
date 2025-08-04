@@ -1,21 +1,24 @@
-import React from 'react';
 import './Header.css';
+import "./link.css"
+import LinksHeader from "./LinksHeader.tsx";
+import CoinGeckoHeader from "./CoinGeckoHeader.tsx";
+import ThemeToggleButton from "./Theme/ThemeToggleButton.tsx";
 
-export const Header = () => {
+type HeaderProps = {
+    gecko?: boolean;
+};
+
+export const Header = ({gecko}: HeaderProps) => {
     return (
         <header id="header">
-            <div id="attribution">
-                {/* Textattribution wie im Brand Guide empfohlen */}
-                <p>Data powered by </p><a href="https://www.coingecko.com/en/api" target="_blank"
-                                          rel="noopener noreferrer">CoinGecko</a>
-                <a href="https://www.coingecko.com/en/api" target="_blank" rel="noopener noreferrer">
-                    <img src="/images/coingecko.svg" alt="CoinGecko Logo" id="coingecko-logo"/>
-                </a>
-            </div>
-
-            <div className="HeaderLinks">
-                <a>Home</a>
-                <a>About</a>
+            {gecko && (
+                <div className="header-left">
+                    <CoinGeckoHeader/>
+                </div>
+            )}
+            <div className="header-right">
+                <ThemeToggleButton className={"HeaderItem link"}/>
+                <LinksHeader className={"HeaderItem"}/>
             </div>
         </header>
     );

@@ -45,10 +45,6 @@ a {
     text-decoration: none;
 }
 
-a:hover {
-    color: var(--link-hover);
-}
-
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -157,9 +153,6 @@ a:hover {
     transition: color 0.2s ease;
 }
 
-.top-nav a:hover {
-    color: var(--link-hover);
-}
 
 .about {
     max-width: 600px;
@@ -200,9 +193,6 @@ a:hover {
     transition: color 0.3s;
 }
 
-.coin-details-container a:hover {
-    color: var(--link-hover);
-}
 
 .coin-details-title {
     font-size: 36px;
@@ -243,9 +233,6 @@ a:hover {
     text-decoration: none;
 }
 
-.coin-details-links a:hover {
-    text-decoration: underline;
-}
 
 .modal-overlay {
     position: fixed;
