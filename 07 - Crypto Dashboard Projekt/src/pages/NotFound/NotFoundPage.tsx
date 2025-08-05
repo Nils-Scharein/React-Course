@@ -1,4 +1,6 @@
 import {Link} from "react-router";
+import type {CSSProperties} from "react"; // Importiere CSSProperties
+// Importiere CSSProperties
 
 const NotFoundPage = () => {
     return (
@@ -14,7 +16,12 @@ const NotFoundPage = () => {
     );
 };
 
-const styles = {
+const styles: {
+    container: CSSProperties;
+    title: CSSProperties;
+    message: CSSProperties;
+    link: CSSProperties;
+} = {
     container: {
         textAlign: "center",
         padding: "80px 20px",

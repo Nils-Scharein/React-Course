@@ -1,4 +1,4 @@
-import "../link.css"
+import "../../components/Header/link.css"
 import {useTheme} from "./UseTheme.tsx"; // Import the custom theme hook
 
 // Define optional props for the component

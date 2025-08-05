@@ -2,7 +2,7 @@ import './Header.css';
 import "./link.css"
 import LinksHeader from "./LinksHeader.tsx";
 import CoinGeckoHeader from "./CoinGeckoHeader.tsx";
-import ThemeToggleButton from "./Theme/ThemeToggleButton.tsx";
+import ThemeToggleButton from "../../context/Theme/ThemeToggleButton.tsx";
 
 type HeaderProps = {
     gecko?: boolean;

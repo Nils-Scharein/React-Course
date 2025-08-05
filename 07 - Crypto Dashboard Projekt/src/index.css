@@ -210,6 +210,7 @@ a:hover {
 }
 
 .coin-details-image {
+    display: inline-block;
     width: 100px;
     margin-bottom: 20px;
 }
@@ -217,7 +218,8 @@ a:hover {
 .coin-details-description {
     font-size: 16px;
     margin-bottom: 20px;
-    color: #555;
+    color: var(--text-color); /* statt #555 */
+    opacity: 0.8; /* optional, um leichte Abstufung zu behalten */
 }
 
 .coin-details-info h3,
