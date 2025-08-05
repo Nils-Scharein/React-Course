@@ -7,6 +7,9 @@ This is my personal project repository for [Modern React From The Beginning](htt
 This repository accompanies me through the chapters, exercises, and projects of the course.  
 It includes both smaller practice components and larger React applications to deepen my understanding of React and its ecosystem.
 
+### 🔗 Projects  
+- [Crypto Dashboard on GitHub](https://github.com/Nils-Scharein/React-Course/tree/main/07%20-%20Crypto%20Dashboard%20Projekt)
+
 ---
 
 ### 🔧 Code Structure
