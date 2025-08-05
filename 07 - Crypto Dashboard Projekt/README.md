@@ -8,8 +8,8 @@ Built for personal use and educational purposes.
 
 - 📈 Live prices of top cryptocurrencies
 - 🔄 Automatic updates
-- 📊 Price charts (optional)
-- 🔍 Search functionality (optional)
+- 📊 Price charts 
+- 🔍 Search functionality 
 
 ## 🛠️ Tech Stack
 
