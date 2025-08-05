@@ -51,13 +51,13 @@ const HomePage = ({
 
                     const errorObj: AppError = {
                         name: "FetchError",
-                        message: `Fehler beim Laden der Daten (${res.status})`,
+                        message: `Error loading data (${res.status})`,
                         context: isRateLimit
-                            ? `⚠️ API-Rate-Limit überschritten (${res.status}). Bitte warte etwas.`
+                            ? `⚠️ API rate limit exceeded (${res.status}). Please wait a moment.`
                             : `URL: ${url}`,
                     };
 
-                    // Fehler neu setzen, um useEffect zu triggern
+                    // Set error again to trigger useEffect
                     setError({...errorObj});
                     return;
                 }
@@ -66,14 +66,14 @@ const HomePage = ({
                 setCoins(data);
 
                 if (!toast.isActive("success-toast-App")) {
-                    toast.success("Daten erfolgreich von CoinGecko geladen", {
+                    toast.success("Data successfully fetched from CoinGecko", {
                         toastId: "success-toast-App",
                     });
                 }
             } catch (err) {
                 const errorObj: AppError = {
-                    name: err instanceof Error ? err.name : "Unbekannter Fehler",
-                    message: err instanceof Error ? err.message : "Unbekannter Fehler beim Abrufen der Daten.",
+                    name: err instanceof Error ? err.name : "UnknownError",
+                    message: err instanceof Error ? err.message : "Unknown error occurred while fetching data.",
                     context: `URL: ${url}`,
                 };
 
@@ -85,6 +85,7 @@ const HomePage = ({
 
         fetchCoins();
     }, [limit]);
+
 
     // Fehler automatisch anzeigen, wenn gesetzt
     useEffect(() => {
