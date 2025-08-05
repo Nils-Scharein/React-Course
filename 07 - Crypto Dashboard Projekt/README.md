@@ -15,7 +15,7 @@ Built for personal use and educational purposes.
 
 - Frontend: [React](https://reactjs.org/)
 - API: [CoinGecko](https://www.coingecko.com/en/api)
-- Styling: CSS / TailwindCSS / Bootstrap *(choose your style)*
+- Styling: CSS / TailwindCSS
 
 ## Preview
 
