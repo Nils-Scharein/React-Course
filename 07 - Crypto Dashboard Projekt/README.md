@@ -1,7 +1,7 @@
 # 💰 Crypto Dashboard
 
 A simple crypto dashboard that fetches real-time cryptocurrency data using
-the [CoinGecko API](https://www.coingecko.com/en/api).
+the [CoinGecko API](https://www.coingecko.com/en/api). <br>
 Built for personal use and educational purposes.
 
 ## 🚀 Features
@@ -16,3 +16,9 @@ Built for personal use and educational purposes.
 - Frontend: [React](https://reactjs.org/)
 - API: [CoinGecko](https://www.coingecko.com/en/api)
 - Styling: CSS / TailwindCSS / Bootstrap *(choose your style)*
+
+## Preview
+
+Here's an animated preview of how the application works:
+
+![DashboardDemo](./demo/CryptoDashboard.gif)
