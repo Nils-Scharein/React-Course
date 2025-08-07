@@ -1,0 +1,55 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    text-align: center;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: white;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    padding: 16px;
+}
+
+.card-content {
+    flex-grow: 1;
+}
+
+.card h1 {
+    font-size: 24px;
+    font-weight: bold;
+
+}
+
+.card p {
+    margin: 4px;
+}
+
+.price {
+    color: grey;
+    font-size: 22px;
+}
+
+.card:hover {
+    transform: scale(1.02);
+    transition: transform 0.2s ease;
+}
+
+.card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+.card button:hover {
+    opacity: 0.7;
+}

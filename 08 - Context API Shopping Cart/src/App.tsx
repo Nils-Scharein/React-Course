@@ -1,34 +1,28 @@
-import {useEffect, useState} from "react";
-import './App.css'
+import './App.css';
+import ProductDisplay from "./features/shoppingCart/Product/ProductDisplay.tsx";
+import Header from "./components/Header.tsx";
+import useProducts from "./context/ProductContext.tsx";
+import useCart from "./context/CartContext.tsx";
 
 function App() {
 
-
-    const [productsData, setProductsData] = useState();
-
-    useEffect(() => {
-        async function getData() {
-            const url = "http://localhost:8000/products";
-            try {
-                const response = await fetch(url);
-                if (!response.ok) {
-                    throw new Error(`Response status: ${response.status}`);
-                }
-
-                const result = await response.json();
-                console.log(result);
-            } catch (error) {
-                console.error(error.message);
-            }
-        }
-        getData()
-    }, []);
+    const {productsData, isLoading, error} = useProducts();
+    const {cartItems} = useCart()
 
     return (
         <>
-      <h1>Test</h1>
-    </>
-  )
+            <Header/>
+            <div className="flex"> {`Cart Contains: `}
+                {cartItems.map((singleItem, index) => {
+                    return (<div key={index}>{singleItem.id}</div>)
+                })}
+            </div>
+            <button>This is a Button to increase CardItems</button>
+            {isLoading && <p>Is Loading...</p>}
+            {error && <div className="error-container">error</div>}
+            <ProductDisplay isLoading={isLoading} error={error} productsData={productsData}/>
+        </>
+    );
 }
 
-export default App
+export default App;
