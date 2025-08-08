@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import './index.css';
 
-// Root-Element aus index.html abrufen
+// Get root element from index.html
 const rootElement = document.getElementById('root') as HTMLElement;
 
-// React-Root erstellen und App rendern
+// Create React root and render App
 ReactDOM.createRoot(rootElement).render(
     <React.StrictMode>
         <App/>

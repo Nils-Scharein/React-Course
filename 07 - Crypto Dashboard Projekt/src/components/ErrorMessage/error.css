@@ -1,4 +1,4 @@
-/* === Fehlercontainer === */
+
 .error-container {
     padding: 1.5rem;
     margin: 2rem auto;
@@ -12,7 +12,6 @@
     transition: all 0.3s ease-in-out;
 }
 
-/* === Titel: zentriert, Icon + Text === */
 .error-container h2 {
     text-align: center;
     font-size: 2rem;

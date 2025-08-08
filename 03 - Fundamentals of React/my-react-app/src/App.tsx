@@ -1,4 +1,3 @@
-import Rating from './components/Rating.tsx';
 import {useState} from 'react';
 import Ratingnew from './components/Ratingnew.tsx';
 

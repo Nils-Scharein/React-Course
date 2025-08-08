@@ -11,12 +11,7 @@
     margin-bottom: 20px;
 }
 
-/* Container für CoinGeckoHeader */
-.header-left {
-    /* bleibt leer, aber ermöglicht Flex-Layout */
-}
-
-/* Container für LinksHeader */
+/* Container for LinksHeader */
 .header-right {
     margin-left: auto;
     display: flex;
@@ -34,7 +29,7 @@
 
 .attribution a {
     text-decoration: none;
-    color: #4caf50; /* CoinGecko-Grün optional */
+    color: #4caf50;
     font-weight: bold;
 }
 
