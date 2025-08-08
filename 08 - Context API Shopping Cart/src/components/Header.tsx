@@ -1,16 +1,16 @@
 import './Header.css';
-import useCart from "../context/CartContext.tsx";
+import type {ReactNode} from "react";
 
-export const Header = () => {
+type HeaderProps = {
+    children?: ReactNode;
+};
 
-    const {cartItems} = useCart()
+export const Header = ({children}: HeaderProps) => {
 
     return (
         <header className="header">
-            <div className="shopping-card">
-                <button>View Shopping Cart {cartItems.length}</button>
-
-            </div>
+            <h1 className="title">Shopping</h1>
+            {children}
         </header>
     );
 };

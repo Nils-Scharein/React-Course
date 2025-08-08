@@ -1,4 +1,4 @@
-import {useEffect, useState, Dispatch, SetStateAction} from "react"
+import {useEffect, useState, type Dispatch, type SetStateAction} from "react"
 
 const useLocal = <T, >(
     storageKey: string,

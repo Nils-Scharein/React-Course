@@ -1,6 +1,7 @@
 import type {Product} from "../../../types/types.ts";
 import "./ProductCard.css"
 import useCart from "../../../context/CartContext.tsx";
+import "../../../styles/Button.css"
 
 type ProductCardProps = {
     productToDisplay: Product;
@@ -8,7 +9,7 @@ type ProductCardProps = {
 
 const ProductCard = ({productToDisplay}: ProductCardProps) => {
 
-    const {addCartItem} = useCart()
+    const {addToCart} = useCart()
 
     return (
         <div className="card">
@@ -24,7 +25,7 @@ const ProductCard = ({productToDisplay}: ProductCardProps) => {
                 {<img src={`./${productToDisplay.image}`} alt={productToDisplay.name}/>}
                 <p>{productToDisplay.description}</p>
             </div>
-            <button onClick={() => addCartItem(productToDisplay)}>Add to Cart</button>
+            <button className="button" onClick={() => addToCart(productToDisplay)}>Add to Cart</button>
         </div>
     );
 };
