@@ -1,0 +1,55 @@
+// .eslintrc.js
+module.exports = {
+  root: true,
+  parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
+  plugins: ['import'],
+  extends: ['eslint:recommended', 'plugin:import/errors', 'plugin:import/warnings', 'plugin:import/typescript'],
+
+  overrides: [
+    {
+      files: ['**/*.ts', '**/*.tsx'],
+      parser: '@typescript-eslint/parser',
+      settings: {
+        'import/resolver': {
+          typescript: {}, // resolves @/aliases from tsconfig
+        },
+      },
+      rules: {
+        // 🚫 Prevent cross-feature imports
+        'import/no-restricted-paths': [
+          'error',
+          {
+            zones: [
+              {
+                target: './src/features/alpha',
+                from: './src/features',
+                except: ['./alpha'],
+              },
+              {
+                target: './src/features/beta',
+                from: './src/features',
+                except: ['./beta'],
+              },
+              // App can depend on features, but not the other way
+              {
+                target: './src/features',
+                from: './src/app',
+              },
+              // Shared modules can be imported by features/app, but not vice versa
+              {
+                target: [
+                  './src/components',
+                  './src/hooks',
+                  './src/lib',
+                  './src/types',
+                  './src/utils',
+                ],
+                from: ['./src/features', './src/app'],
+              },
+            ],
+          },
+        ],
+      },
+    },
+  ],
+};
