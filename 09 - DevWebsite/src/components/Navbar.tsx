@@ -11,58 +11,54 @@ import { IoIosContact } from 'react-icons/io';
 import { MdEmail } from 'react-icons/md';
 import { NavLink } from 'react-router';
 import NavbarLink from '@/components/NavbarLink';
-
-function colorActive(isActive: boolean) {
-  return isActive ? 'text-blue-400' : 'transition hover:text-blue-400';
-}
+import ThemeToggleButton from '@/context/Theme/ThemeToggleButton';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   return (
-    <nav className="bg-gray-800 border-b border-gray-700 shadow-md sticky top-0 z-50">
+    <nav className="bg-[var(--card-bg)] border-b border-[var(--border-color)] shadow-md sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
         <NavLink
-          to={'/'}
-          className={'flex items-center gap-2 text-lg font-bold text-blue-300'}
+          to="/"
+          className="flex items-center gap-2 text-lg font-bold text-[var(--accent-color)]"
         >
-          <FaLaptopCode className={'text-blue-400 text-xl'} />
+          <FaLaptopCode className="text-[var(--accent-color)] text-xl" />
           <span>Dev Site Nils 👋</span>
         </NavLink>
-        {/*Desktop Navigation*/}
-        <div className={'hidden md:flex items-center gap-6'}>
-          <div className={'space-x-4 text-sm text-gray-300 flex items-center'}>
+
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex items-center gap-6">
+          <div className="space-x-4 text-sm text-[var(--text-muted-color)] flex items-center">
+            <NavbarLink text="Home" icon={<FaHome className="ml-1" />} to="/" />
             <NavbarLink
-              text={'Home'}
-              icon={<FaHome className={'ml-1'} />}
-              to={'/'}
+              text="Projects"
+              icon={<FaProjectDiagram className="ml-1" />}
+              to="/projects"
             />
             <NavbarLink
-              text={'Projects'}
-              icon={<FaProjectDiagram className={'ml-1'} />}
-              to={'/projects'}
+              text="Blog"
+              icon={<FaBlog className="ml-1" />}
+              to="/blog"
             />
             <NavbarLink
-              text={'Blog'}
-              icon={<FaBlog className={'ml-1'} />}
-              to={'/blog'}
+              text="About"
+              icon={<IoIosContact className="ml-1" />}
+              to="/about"
             />
             <NavbarLink
-              text={'About'}
-              icon={<IoIosContact className={'ml-1'} />}
-              to={'/about'}
-            />
-            <NavbarLink
-              text={'Contact'}
-              icon={<MdEmail className={'ml-1'} />}
-              to={'/contact'}
+              text="Contact"
+              icon={<MdEmail className="ml-1" />}
+              to="/contact"
             />
           </div>
+          <ThemeToggleButton />
         </div>
-        {/*Mobile Navigation*/}
-        <div className={'flex md:hidden items-center gap-6'}>
+
+        {/* Mobile Navigation Toggle */}
+        <div className="flex md:hidden items-center gap-6">
           <button
-            className={'cursor-pointer text-blue-400 text-xl'}
+            className="cursor-pointer text-[var(--accent-color)] text-xl"
             onClick={() => {
               setIsMenuOpen(!isMenuOpen);
             }}
@@ -71,41 +67,42 @@ const Navbar = () => {
           </button>
         </div>
       </div>
+
+      {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-gray-800 border-t border-gray-700 px-6 py-4 space-y-2 space-x-4 text-center">
-          <div
-            className={'space-x-4 text-sm text-gray-300 flex justify-center'}
-          >
+        <div className="md:hidden bg-[var(--card-bg)] border-t border-[var(--border-color)] px-6 py-4 space-y-2 text-center">
+          <div className="space-y-4 text-sm text-[var(--text-muted-color)] flex flex-col items-center">
             <NavbarLink
-              text={'Home'}
-              icon={<FaHome className={'ml-1'} />}
-              to={'/'}
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              text="Home"
+              icon={<FaHome className="ml-1" />}
+              to="/"
+              onClick={() => setIsMenuOpen(false)}
             />
             <NavbarLink
-              text={'Projects'}
-              icon={<FaProjectDiagram className={'ml-1'} />}
-              to={'/projects'}
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              text="Projects"
+              icon={<FaProjectDiagram className="ml-1" />}
+              to="/projects"
+              onClick={() => setIsMenuOpen(false)}
             />
             <NavbarLink
-              text={'Blog'}
-              icon={<FaBlog className={'ml-1'} />}
-              to={'/blog'}
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              text="Blog"
+              icon={<FaBlog className="ml-1" />}
+              to="/blog"
+              onClick={() => setIsMenuOpen(false)}
             />
             <NavbarLink
-              text={'About'}
-              icon={<IoIosContact className={'ml-1'} />}
-              to={'/about'}
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              text="About"
+              icon={<IoIosContact className="ml-1" />}
+              to="/about"
+              onClick={() => setIsMenuOpen(false)}
             />
             <NavbarLink
-              text={'Contact'}
-              icon={<MdEmail className={'ml-1'} />}
-              to={'/contact'}
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              text="Contact"
+              icon={<MdEmail className="ml-1" />}
+              to="/contact"
+              onClick={() => setIsMenuOpen(false)}
             />
+            <ThemeToggleButton />
           </div>
         </div>
       )}

@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+/* Light theme */
+:root {
+    /* surfaces */
+    --bg-color: #ffffff; /* pure white */
+    --card-bg: #f3f4f6; /* gray-100 */
+    --border-color: #d1d5db; /* gray-300 */
+
+    /* text */
+    --text-color: #0f172a; /* slate-900 - darker */
+    --text-muted-color: #6b7280; /* gray-500 */
+
+    /* brand / action */
+    --accent-color: #1d4ed8; /* blue-700 - deeper blue */
+    --accent-hover: #1e40af; /* blue-800 */
+    --accent-foreground: #ffffff; /* white text on accent */
+
+    /* inputs */
+    --input-bg: #f8fafc; /* slate-50 */
+    --ring-color: #2563eb; /* blue-600 */
+
+    /* links */
+    --link-color: #1d4ed8; /* blue-700 */
+    --link-hover: #1e40af; /* blue-800 */
+}
+
+/* Dark theme */
+html.dark {
+    /* surfaces */
+    --bg-color: #0a0f1e; /* even darker than slate-900 */
+    --card-bg: #1c2536; /* darker slate */
+    --border-color: #475569; /* slate-600 - visible but subtle */
+
+    /* text */
+    --text-color: #f9fafb; /* near white */
+    --text-muted-color: #94a3b8; /* slate-400 */
+
+    /* brand / action */
+    --accent-color: #60a5fa; /* blue-400 - bright on dark */
+    --accent-hover: #3b82f6; /* blue-500 */
+    --accent-foreground: #0a0f1e; /* dark background on light accent */
+
+    /* inputs */
+    --input-bg: #1e293b; /* slate-800 */
+    --ring-color: #93c5fd; /* blue-300 - more visible on dark */
+
+    /* links */
+    --link-color: #93c5fd; /* blue-300 */
+    --link-hover: #bfdbfe; /* blue-200 */
+}

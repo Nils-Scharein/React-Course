@@ -2,17 +2,17 @@ import type { Route } from './+types/index';
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: 'Blog' },
+    { title: 'posts' },
     { name: 'description', content: 'Development Website' },
   ];
 }
 
-const Blog = () => {
+const Posts = () => {
   return (
-    <section className="text-3xl font-bold text-text mb-8 text-center">
-      Blog
+    <section className="text-3xl font-bold text-white mb-8 text-center">
+      Posts
     </section>
   );
 };
 
-export default Blog;
+export default Posts;

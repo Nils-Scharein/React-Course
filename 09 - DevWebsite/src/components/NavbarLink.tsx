@@ -10,7 +10,9 @@ type NavbarLinkProps = {
 };
 
 function colorActive(isActive: boolean) {
-  return isActive ? 'text-blue-400' : 'transition hover:text-blue-400';
+  return isActive
+    ? 'text-[var(--accent-color)]'
+    : 'text-[var(--text-muted-color)] transition-colors hover:text-[var(--accent-color)]';
 }
 
 const NavbarLink = ({
@@ -24,11 +26,11 @@ const NavbarLink = ({
     <NavLink
       to={to}
       className={({ isActive }) =>
-        `${colorActive(isActive)} flex items-center ${className}`
+        `${colorActive(isActive)} flex items-center gap-2 ${className}`
       }
       onClick={onClick}
     >
-      {text} {icon}
+      {icon} {text}
     </NavLink>
   );
 };

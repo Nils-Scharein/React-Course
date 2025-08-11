@@ -9,9 +9,10 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
     <Link
       key={project.id}
-      className="bg-gray-900
-         transition-transform transition-colors duration-300
-         hover:bg-gray-800 hover:scale-105 rounded-lg flex flex-col"
+      className="bg-[var(--card-bg)] text-[var(--text-color)]
+        transition-transform transition-colors duration-300
+        hover:bg-[var(--border-color)] hover:scale-105
+        rounded-lg flex flex-col"
       to={`/projects/${project.id}`}
     >
       <div className="w-full h-32 overflow-hidden rounded-t-lg">
@@ -23,11 +24,15 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
       </div>
 
       <div className="p-4 flex flex-col flex-1">
-        <h1 className="text-blue-400 text-2xl pb-2">{project.title}</h1>
+        <h1 className="text-[var(--accent-color)] text-2xl pb-2">
+          {project.title}
+        </h1>
 
-        <p className="text-xs pb-2 flex-grow">{project.description}</p>
+        <p className="text-xs pb-2 flex-grow text-[var(--text-muted-color)]">
+          {project.description}
+        </p>
 
-        <div className="flex justify-between pt-2 text-sm text-gray-500">
+        <div className="flex justify-between pt-2 text-sm text-[var(--text-muted-color)]">
           <p>
             {project.categories.length > 3
               ? project.categories.slice(0, 3).join(', ')
