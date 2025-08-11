@@ -17,13 +17,6 @@ export default {
         link: 'var(--link-color)',
         'link-hover': 'var(--link-hover)',
       },
-      // Make Tailwind’s default ring/border pick up your tokens
-      ringColor: {
-        DEFAULT: 'var(--ring-color)',
-      },
-      borderColor: {
-        DEFAULT: 'var(--border-color)',
-      },
     },
   },
   plugins: [],

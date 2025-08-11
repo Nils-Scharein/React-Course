@@ -1,40 +1,35 @@
-import { Link } from 'react-router';
+import { Link, useParams } from 'react-router';
+import LoadingSpinner from '@/components/LoadingSpinner';
+import useFetch from '@/hooks/useFetch';
 import type { project } from '@/types/project';
 import type { Route } from './+types';
 
-export async function clientLoader({
-  request,
-  params,
-}: Route.ClientLoaderArgs): Promise<project> {
-  const res = await fetch(`http://localhost:8222/projects/${params.projectId}`);
+const ProjectDetails = ({ loaderData }: Route.ComponentProps) => {
+  const { projectId } = useParams();
 
-  console.log(res);
-  if (!res.ok) {
-    throw new Response('Project not found', { status: 404 });
+  const {
+    data: project,
+    isLoading,
+    error,
+  } = useFetch<project>(`http://localhost:8222/projects/${projectId}`);
+
+  if (isLoading) {
+    return <LoadingSpinner />;
   }
 
-  const project: project = await res.json();
-  console.log(project);
-  return project;
-}
-
-export function HydrateFallback() {
-  return (
-    <div
-      id="loading-splash"
-      className="text-center p-10 text-[var(--text-color)]"
-    >
-      <div
-        id="loading-splash-spinner"
-        className="w-8 h-8 border-4 border-[var(--ring-color)] border-t-transparent rounded-full animate-spin mx-auto mb-4"
-      />
-      <p>Loading, please wait...</p>
-    </div>
-  );
-}
-
-const ProjectDetails = ({ loaderData }: Route.ComponentProps) => {
-  const project = loaderData as unknown as project;
+  if (error || !project) {
+    return (
+      <div className="p-6 text-center text-[var(--text-color)]">
+        <p>Error loading project: {error || 'Project not found.'}</p>
+        <Link
+          to="/projects"
+          className="text-[var(--link-color)] hover:text-[var(--link-hover)]"
+        >
+          ← Back to Projects
+        </Link>
+      </div>
+    );
+  }
 
   return (
     <div className="py-5 px-6 bg-[var(--card-bg)] text-[var(--text-color)] transition-colors duration-300">

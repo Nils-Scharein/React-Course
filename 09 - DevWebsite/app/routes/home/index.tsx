@@ -12,7 +12,7 @@ export function meta({}: Route.MetaArgs) {
 const Home = () => {
   const now = new Date().toISOString();
 
-  if (typeof window == 'undefined') {
+  if (typeof window === 'undefined') {
     console.log('Server Render At: ', now);
   } else {
     console.log('Client Hydration At: ', now);
@@ -22,6 +22,9 @@ const Home = () => {
     console.log('window scroll: ', window.scrollX);
   }, []);
 
-  return <h2 className="text-3xl font-bold text-white mb-8 text-center"></h2>;
+  return (
+    <h2 className="text-3xl font-bold text-[var(--text-color)] mb-8 text-center"></h2>
+  );
 };
+
 export default Home;

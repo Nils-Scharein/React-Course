@@ -36,19 +36,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* No-flash theme script: runs before first paint */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function () {
-  try {
-    var t = localStorage.getItem('theme');
-    if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    var c = document.documentElement.classList;
-    c.remove('light','dark'); c.add(t);
-  } catch (e) {}
-})();`,
-          }}
-        />
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />

@@ -9,7 +9,7 @@ export function meta({}: Route.MetaArgs) {
 
 const Posts = () => {
   return (
-    <section className="text-3xl font-bold text-white mb-8 text-center">
+    <section className="text-3xl font-bold text-[var(--text-color)] mb-8 text-center">
       Posts
     </section>
   );
