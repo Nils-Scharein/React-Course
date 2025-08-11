@@ -2,6 +2,7 @@
 import js from '@eslint/js';
 import tsParser from '@typescript-eslint/parser';
 import pluginImport from 'eslint-plugin-import';
+import globals from 'globals';
 
 // ⬇️ FlatCompat, um legacy "extends" wie plugin:prettier/recommended zu nutzen
 
@@ -37,6 +38,16 @@ export default [
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',
+    },
+  },
+  {
+    languageOptions: {
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+      globals: {
+        ...globals.browser,
+        ...globals.es2021,
+      },
     },
   },
 

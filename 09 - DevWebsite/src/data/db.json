@@ -1,0 +1,68 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Crypto Dashboard",
+      "description": "A developer-focused crypto dashboard with live prices, simple portfolio tracking, and API-driven insights.",
+      "image": "/images/project-1.png",
+      "url": "https://github.com/Nils-Scharein/React-Course/tree/main/07%20-%20Crypto%20Dashboard%20Projekt",
+      "date": "2025-02-01",
+      "categories": [
+        "Fullstack",
+        "Api",
+        "React",
+        "Crypto"
+      ],
+      "featured": false
+    },
+    {
+      "id": 2,
+      "title": "Shopping Cart Context",
+      "description": "A React shopping cart built with Context and Reducer: add/remove items, update quantities, and calculate totals.",
+      "image": "/images/project-2.png",
+      "url": "https://github.com/Nils-Scharein/React-Course/tree/main/08%20-%20Context%20API%20Shopping%20Cart",
+      "date": "2025-01-20",
+      "categories": [
+        "Fullstack",
+        "React"
+      ],
+      "featured": true
+    },
+    {
+      "id": 3,
+      "title": "Travel Manager",
+      "description": "An interactive travel map that highlights the countries you've visited — backed by a PostgreSQL database for persistent storage and stats.",
+      "image": "/images/project-3.png",
+      "url": "https://github.com/Nils-Scharein/Full-Stack-Web-Development-Bootcamp/tree/main/Section%2033%20-%20PostgreSQL/8.3%20Travel%20Tracker/code",
+      "date": "2024-12-15",
+      "categories": [
+        "Fullstack"
+      ],
+      "featured": true
+    },
+    {
+      "id": 4,
+      "title": "Simon Says",
+      "description": "A classic Simon Says memory game with colored pads, sound cues, and increasing sequences.",
+      "image": "/images/project-4.png",
+      "url": "https://github.com/Nils-Scharein/Full-Stack-Web-Development-Bootcamp/tree/main/Section%2020%20-%20The%20Simon%20Game",
+      "date": "2024-11-05",
+      "categories": [
+        "Fullstack"
+      ],
+      "featured": false
+    },
+    {
+      "id": 5,
+      "title": "Dice Game",
+      "description": "A two-player dice game.",
+      "image": "/images/project-5.png",
+      "url": "https://github.com/Nils-Scharein/Full-Stack-Web-Development-Bootcamp/tree/main/Section%2017%20-%20Dicee%20Game/Dicee%20Challenge%20Code",
+      "date": "2024-10-12",
+      "categories": [
+        "Fullstack"
+      ],
+      "featured": false
+    }
+  ]
+}

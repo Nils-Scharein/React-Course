@@ -1,5 +1,5 @@
 {
-  "printWidth": 120,
+  "printWidth": 80,
   "useTabs": false,
   "tabWidth": 2,
   "trailingComma": "es5",
@@ -9,5 +9,6 @@
   "arrowParens": "always",
   "jsxSingleQuote": false,
   "bracketSameLine": false,
-  "endOfLine": "lf"
+  "endOfLine": "lf",
+  "tailwindPreserveWhitespace": true
 }
